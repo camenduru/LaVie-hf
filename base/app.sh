@@ -1,0 +1,1 @@
+srun -p aigc-video --gres=gpu:1 -n1 -N1 python app.py
