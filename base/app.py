@@ -8,8 +8,8 @@ import cv2
 import pandas as pd
 import torchvision
 import random
-config_path = "/mnt/petrelfs/zhouyan/project/lavie-release/base/configs/sample.yaml"
-args = OmegaConf.load("/mnt/petrelfs/zhouyan/project/lavie-release/base/configs/sample.yaml")
+config_path = "./base/configs/sample.yaml"
+args = OmegaConf.load("./base/configs/sample.yaml")
 device = "cuda" if torch.cuda.is_available() else "cpu"
 # ------- get model ---------------
 model_t2V = model_t2v_fun(args)
@@ -84,11 +84,11 @@ with gr.Blocks(css='style.css') as demo:
             # outputs = [video_out]
             with gr.Column():
                     
-                prompt = gr.Textbox(value="a teddy bear walking on the street", label="Prompt", placeholder="enter prompt", show_label=True, elem_id="prompt-in", min_width=200, lines=2)
+                prompt = gr.Textbox(value="a corgi walking in the park at sunrise, oil painting style", label="Prompt", placeholder="enter prompt", show_label=True, elem_id="prompt-in", min_width=200, lines=2)
                 
                 ddim_steps = gr.Slider(label='Steps', minimum=50, maximum=300, value=50, step=1)
                 seed_inp = gr.Slider(value=-1,label="seed (for random generation, use -1)",show_label=True,minimum=-1,maximum=2147483647)
-                cfg = gr.Number(label="guidance_scale",value=7)
+                cfg = gr.Number(label="guidance_scale",value=7.5)
                 # seed_inp = gr.Slider(label="Seed", minimum=0, maximum=2147483647, step=1, value=400, elem_id="seed-in")
 
                 # with gr.Row():
