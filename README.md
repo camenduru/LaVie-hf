@@ -1,3 +1,5 @@
+
+---
 title: LaVie
 emoji: 😊
 colorFrom: pink
@@ -6,6 +8,7 @@ sdk: gradio
 sdk_version: 4.3.0
 app_file: base/app.py
 pinned: false
+---
 
 # LaVie: High-Quality Video Generation with Cascaded Latent Diffusion Models
 
