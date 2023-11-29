@@ -1,3 +1,12 @@
+title: LaVie
+emoji: 😊
+colorFrom: pink
+colorTo: pink
+sdk: gradio
+sdk_version: 4.3.0
+app_file: base/app.py
+pinned: false
+
 # LaVie: High-Quality Video Generation with Cascaded Latent Diffusion Models
 
 This repository is the official PyTorch implementation of [LaVie](https://arxiv.org/abs/2309.15103).
