@@ -22,10 +22,11 @@ args = OmegaConf.load("./base/configs/sample.yaml")
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 def model_t2v_fun(args):
-	sd_path = args.pretrained_path + "/stable-diffusion-v1-4"
+	# sd_path = args.pretrained_path + "/stable-diffusion-v1-4"
+    sd_path = args.pretrained_path
 	unet = get_models(args, sd_path).to(device, dtype=torch.float16)
 	# state_dict = find_model(args.pretrained_path + "/lavie_base.pt")
-	state_dict = find_model("/mnt/petrelfs/share_data/wangyaohui/lavie/pretrained_models/lavie_base.pt")
+	state_dict = find_model("./pretrained_models/lavie_base.pt")
 	unet.load_state_dict(state_dict)
 	
 	vae = AutoencoderKL.from_pretrained(sd_path, subfolder="vae", torch_dtype=torch.float16).to(device)
