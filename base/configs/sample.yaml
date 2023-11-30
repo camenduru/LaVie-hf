@@ -1,6 +1,6 @@
 # path:
-output_folder: "./outputs/"
-pretrained_path: "./pretrained_models"
+output_folder: "outputs"
+pretrained_path: "pretrained_models"
 
 # model config: 
 model: UNet
