@@ -569,21 +569,21 @@ class UNet3DConditionModel(ModelMixin, ConfigMixin):
 
         model = cls.from_config(config)
         model_file = os.path.join(pretrained_model_path, WEIGHTS_NAME)
-        if not os.path.isfile(model_file):
-            raise RuntimeError(f"{model_file} does not exist")
-        state_dict = torch.load(model_file, map_location="cpu")
-        for k, v in model.state_dict().items():
-            # print(k)
-            if '_temp' in k:
-                state_dict.update({k: v})
-            if 'attn_fcross' in k: # conpy parms of attn1 to attn_fcross
-                k = k.replace('attn_fcross', 'attn1')
-                state_dict.update({k: state_dict[k]})
-            if 'norm_fcross' in k:
-                k = k.replace('norm_fcross', 'norm1')
-                state_dict.update({k: state_dict[k]})
+        # if not os.path.isfile(model_file):
+        #     raise RuntimeError(f"{model_file} does not exist")
+        # state_dict = torch.load(model_file, map_location="cpu")
+        # for k, v in model.state_dict().items():
+        #     # print(k)
+        #     if '_temp' in k:
+        #         state_dict.update({k: v})
+        #     if 'attn_fcross' in k: # conpy parms of attn1 to attn_fcross
+        #         k = k.replace('attn_fcross', 'attn1')
+        #         state_dict.update({k: state_dict[k]})
+        #     if 'norm_fcross' in k:
+        #         k = k.replace('norm_fcross', 'norm1')
+        #         state_dict.update({k: state_dict[k]})
 
-        model.load_state_dict(state_dict)
+        # model.load_state_dict(state_dict)
 
         return model
     
