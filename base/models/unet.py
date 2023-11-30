@@ -23,28 +23,16 @@ try:
 except:
     from diffusers.modeling_utils import ModelMixin # 0.11.1
 
-try:
-    from .unet_blocks import (
-        CrossAttnDownBlock3D,
-        CrossAttnUpBlock3D,
-        DownBlock3D,
-        UNetMidBlock3DCrossAttn,
-        UpBlock3D,
-        get_down_block,
-        get_up_block,
-    )
-    from .resnet import InflatedConv3d
-except:
-    from unet_blocks import (
-        CrossAttnDownBlock3D,
-        CrossAttnUpBlock3D,
-        DownBlock3D,
-        UNetMidBlock3DCrossAttn,
-        UpBlock3D,
-        get_down_block,
-        get_up_block,
-    )
-    from resnet import InflatedConv3d
+from .unet_blocks import (
+    CrossAttnDownBlock3D,
+    CrossAttnUpBlock3D,
+    DownBlock3D,
+    UNetMidBlock3DCrossAttn,
+    UpBlock3D,
+    get_down_block,
+    get_up_block,
+)
+from .resnet import InflatedConv3d
 
 from rotary_embedding_torch import RotaryEmbedding
 
