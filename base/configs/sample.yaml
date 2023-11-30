@@ -1,6 +1,6 @@
 # path:
 output_folder: "../outputs/"
-pretrained_path: "/mnt/petrelfs/zhouyan/models"
+pretrained_path: "./"
 
 # model config: 
 model: UNet
