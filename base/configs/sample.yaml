@@ -1,5 +1,5 @@
 # path:
-output_folder: "/mnt/petrelfs/share_data/zhouyan/gradio/lavie"
+output_folder: "../outputs/"
 pretrained_path: "/mnt/petrelfs/zhouyan/models"
 
 # model config: 
