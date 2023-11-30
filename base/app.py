@@ -8,9 +8,15 @@ import cv2
 import pandas as pd
 import torchvision
 import random
+from huggingface_hub import snapshot_download
+
 config_path = "./base/configs/sample.yaml"
 args = OmegaConf.load("./base/configs/sample.yaml")
 device = "cuda" if torch.cuda.is_available() else "cpu"
+### download models
+snapshot_download('Vchitect/LaVie',cache_dir='./pretrained_models')
+snapshot_download('CompVis/stable-diffusion-v1-4',cache_dir='./pretrained_models')
+
 # ------- get model ---------------
 model_t2V = model_t2v_fun(args)
 model_t2V.to(device)
