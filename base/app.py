@@ -176,6 +176,6 @@ with gr.Blocks(css='style.css') as demo:
     # share_button.click(None, [], [], _js=share_js)
 
     print(2)
-demo.queue(max_size=12).launch(server_name="0.0.0.0", server_port=7860)
+demo.queue(max_size=12).launch()
 
 
