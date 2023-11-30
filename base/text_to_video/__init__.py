@@ -16,8 +16,8 @@ sys.path.append(os.path.split(sys.path[0])[0])
 from models import get_models
 import imageio
 
-config_path = "/mnt/petrelfs/zhouyan/project/lavie-release/base/configs/sample.yaml"
-args = OmegaConf.load("/mnt/petrelfs/zhouyan/project/lavie-release/base/configs/sample.yaml")
+config_path = "./base/configs/sample.yaml"
+args = OmegaConf.load("./base/configs/sample.yaml")
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
